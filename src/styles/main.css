@@ -4,6 +4,7 @@ body{
     align-items: center;
     min-height: 100vh;
     background: #fc1e8a;
+    user-select: none;
 }
 
 .container{
@@ -41,7 +42,7 @@ h2{
 }
 .game{
     width: 430px;
-    height: 439px;
+    height: 430px;
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
@@ -57,4 +58,29 @@ h2{
     align-items: center;
     justify-content: center;
     background-color: #FFF;
+    font-size: 3em;
+    transform: rotateY(180deg);
+    transition: 0.25s;
+    
 }
+.item::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: #404040;
+    transition: 0.25s;
+    transform: rotateY(0deg);
+    backface-visibility: hidden;
+    opacity: 0.8;
+}
+
+
+ .item.boxOpen {
+    transform: rotateY(0deg);
+  }
+  
+  .boxOpen::after,
+  .boxMatch::after {
+    transform: rotateY(180deg);
+  } 
+  
